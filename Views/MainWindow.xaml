@@ -1,0 +1,25 @@
+﻿<Window x:Class="BlankApp2.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        MinWidth="1280"
+        MinHeight="720"
+        MaxWidth="1280"
+        MaxHeight="720"
+        Title="{Binding Title}"  >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="5">
+            <Button Content="TCP/IP" Command="{Binding Cmd}" Margin="0 0 5 0" Width="85"/>
+            <Button Content="Serial" Command="{Binding Cmd}" Margin="0 0 5 0" Width="75"/>
+            <Button Content="DB" Command="{Binding Cmd}" Margin="0 0 5 0" Width="60"/>
+            <Button Content="Server" Command="{Binding Cmd}" Margin="0 0 5 0" Width="80"/>
+        </StackPanel>
+        <ContentControl Grid.Row="1" prism:RegionManager.RegionName="ContentRegion" />
+    </Grid>
+</Window>
